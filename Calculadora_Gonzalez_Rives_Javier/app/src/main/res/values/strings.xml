@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Calculadora_Gonzalez_Rives_Javier</string>
+    <!-- seccion en español -->
+    <string name="tituloEsp">Calculadora</string>
+    <string name="numero1Esp">primer Operando</string>
+    <string name="numero2Esp">primer Operando</string>
+    <string name="sumarES">sumar</string>
+    <string name="resutadoEsp">Resultado</string>
+    <!-- aleman -->
+    <string name="tituloGer">Rechner</string>
+    <string name="numero1Ger">erster Operand</string>
+    <string name="numero2Ger">zweiter Operand</string>
+    <string name="sumarGer">summieren</string>
 </resources>

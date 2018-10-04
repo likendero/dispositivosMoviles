@@ -8,15 +8,17 @@
 
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Calculadora"
+        android:text="@string/tituloEsp"
         android:textSize="20dp"
         android:theme="@style/Base.Theme.AppCompat.Light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
     <EditText
         android:id="@+id/txtEumero1"
@@ -25,7 +27,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="primer Numero"
+        android:hint="@string/numero1Esp"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo" />
@@ -37,7 +39,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Segundo Numero"
+        android:hint="@string/numero2Esp"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEumero1" />
@@ -57,7 +59,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -65,19 +67,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Suma"
                 android:onClick="sumar"
-                />
+                android:text="@string/sumarES" />
 
             <Button
                 android:id="@+id/resta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Resta"
-
-                />
+                android:onClick="restar"
+                android:text="Resta" />
         </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rgGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/rgEsp"
+
+            >
+
+            <RadioButton
+                android:id="@+id/rgEsp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Español"
+                android:onClick="idioma"
+                />
+
+            <RadioButton
+                android:id="@+id/rgGer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Deutch"
+                android:onClick="idioma"
+                />
+        </RadioGroup>
 
     </LinearLayout>
 
