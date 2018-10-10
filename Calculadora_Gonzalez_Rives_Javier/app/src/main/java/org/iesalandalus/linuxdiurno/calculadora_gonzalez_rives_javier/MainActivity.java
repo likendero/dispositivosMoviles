@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText txtNumero1,txtNumero2;
     private TextView txtRes;
-    private RadioButton radioEsp,radioGer;
+    private RadioButton radioEsp,radioGer,radioJap,radioKur;
     //private Button btnSumar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         //captura de los radios
         radioEsp = (RadioButton) findViewById(R.id.rgEsp);
         radioGer = (RadioButton) findViewById(R.id.rgGer);
+        radioJap = (RadioButton) findViewById(R.id.rdJapones);
+        radioKur = (RadioButton) findViewById(R.id.rdKurdo);
     }
 
     /**
@@ -72,21 +74,43 @@ public class MainActivity extends AppCompatActivity {
     public void idioma(View view){
         TextView titulo = (TextView) findViewById(R.id.titulo);
         Button btnSumar = (Button) findViewById(R.id.suma);
+        Button btnRestar = (Button) findViewById(R.id.resta);
         // comprobacion que radio esta pulsado
-
+        // caso que se seleccione el castellano
         if(radioEsp.isChecked()) {
 
             titulo.setText(R.string.tituloEsp);
             txtNumero1.setHint(R.string.numero1Esp);
             txtNumero2.setHint(R.string.numero2Esp);
             btnSumar.setText(R.string.sumarES);
+            btnRestar.setText(R.string.restarEsp);
         }
+        // caso que se seleccione el aleman
         if(radioGer.isChecked()){
 
             titulo.setText(R.string.tituloGer);
             txtNumero1.setHint(R.string.numero1Ger);
             txtNumero2.setHint(R.string.numero2Ger);
             btnSumar.setText(R.string.sumarGer);
+            btnRestar.setText(R.string.restarGer);
         }
+        // caso japones
+        if(radioJap.isChecked()){
+            titulo.setText(R.string.tituloJap);
+            txtNumero1.setHint(R.string.numero1Jap);
+            txtNumero2.setHint(R.string.numero2Jap);
+            btnSumar.setText(R.string.sumarJap);
+            btnRestar.setText(R.string.restarJap);
+        }
+        // caso kurdo
+        if(radioKur.isChecked()){
+            titulo.setText(R.string.tituloKur);
+            txtNumero1.setHint(R.string.numero1Kur);
+            txtNumero2.setHint(R.string.numero2Kur);
+            btnSumar.setText(R.string.sumarKur);
+            btnRestar.setText(R.string.restarKur);
+        }
+
+
     }
 }

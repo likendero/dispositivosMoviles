@@ -3,12 +3,29 @@
     <!-- seccion en español -->
     <string name="tituloEsp">Calculadora</string>
     <string name="numero1Esp">primer Operando</string>
-    <string name="numero2Esp">primer Operando</string>
+    <string name="numero2Esp">segundo Operando</string>
     <string name="sumarES">sumar</string>
     <string name="resutadoEsp">Resultado</string>
+    <string name="restarEsp">Restar</string>
     <!-- aleman -->
     <string name="tituloGer">Rechner</string>
     <string name="numero1Ger">erster Operand</string>
     <string name="numero2Ger">zweiter Operand</string>
     <string name="sumarGer">summieren</string>
+    <string name="resultadoGer">Ergebnis</string>
+    <string name="restarGer">subtrahieren</string>
+    <!-- Kurdo -->
+    <string name="resultadoKur">encam</string>
+    <string name="numero1Kur">operasyona yekem</string>
+    <string name="numero2Kur">operasyona duyem</string>
+    <string name="tituloKur">calculator</string>
+    <string name="sumarKur">zêde bike</string>
+    <string name="restarKur">hilweşînin</string>
+    <!-- Japones -->
+    <string name="tituloJap">タイトル</string>
+    <string name="resultadoJap">結果</string>
+    <string name="numero1Jap"> 第1オペランド</string>
+    <string name="numero2Jap">第2オペランド</string>
+    <string name="sumarJap">追加する</string>
+    <string name="restarJap">減算</string>
 </resources>

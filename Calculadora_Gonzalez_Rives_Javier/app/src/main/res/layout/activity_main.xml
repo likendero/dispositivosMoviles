@@ -97,11 +97,29 @@
                 />
 
             <RadioButton
+                android:id="@+id/rdJapones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Japones"
+                android:onClick="idioma"
+                />
+
+            <RadioButton
                 android:id="@+id/rgGer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Deutch"
+                android:onClick="idioma"
+                />
+
+            <RadioButton
+                android:id="@+id/rdKurdo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kurdo"
                 android:onClick="idioma"
                 />
         </RadioGroup>
