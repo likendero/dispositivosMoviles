@@ -62,21 +62,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/suma"
-                android:layout_width="wrap_content"
+            <Spinner
+                android:id="@+id/spOpciones"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="sumar"
-                android:text="@string/sumarES" />
 
-            <Button
-                android:id="@+id/resta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="restar"
-                android:text="Resta" />
+                />
+
         </LinearLayout>
 
         <RadioGroup
@@ -123,6 +116,35 @@
                 android:onClick="idioma"
                 />
         </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/resta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="restar"
+                android:text="Resta" />
+
+            <Button
+                android:id="@+id/suma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="sumar"
+                android:text="@string/sumarES" />
+            <Button
+                android:id="@+id/Operar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnResEsp"
+                android:onClick="operacion"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 
