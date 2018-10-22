@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Peluqueria_Javier_Gonzalez_Rives</string>
+    <string name="btnRegistrar">registrar</string>
+    <string name="btnAcceder">acceder</string>
+    <string name="edNombre">introduzca su nombre</string>
+    <string name="edPass">introduzca su contrasenna</string>
+    <!-- segunda Activity -->
+    <!-- radio buttons pelos -->
+    <string name="pelo1">Moreno</string>
+    <string name="pelo2">Rubio</string>
+    <string name="pelo3">Pelirrojo</string>
+    <string name="pelo4">Castaño</string>
+    <string name="pelo5">sin Pelo</string>
+    <!-- telefono -->
+    <string name="tvTelefono">telefono</string>
+    <string name="edTelefono">introduce un telefono</string>
+    <!-- cuadro de comentarios -->
+    <string name="edComentarios">pon aqui tus comentarios</string>
+
+</resources>
