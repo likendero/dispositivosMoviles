@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">P09Agenda_Javier_Gonzalez_Rives</string>
+    <string name="snombre">introduzca un nombre</string>
+    <string name="btGuardar">Guardar</string>
+    <string name="btBuscar">Buscar</string>
+</resources>
