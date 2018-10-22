@@ -1,5 +1,6 @@
 package org.iesalandalus.likendero.tareaactivitis_javier_gonzalez_rives;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,6 +73,15 @@ public class Actividad2 extends AppCompatActivity {
      */
     private void cambio(){
         tvSalida.setText("dia: " + diaActual + " mes:" + mesActual);
+    }
+
+    /**
+     * metodo para volver atras al pulsar el boton
+     * @param view
+     */
+    public void atras(View view){
+        Intent in = new Intent(this,MainActivity.class);
+        startActivity(in);
     }
     }
 
