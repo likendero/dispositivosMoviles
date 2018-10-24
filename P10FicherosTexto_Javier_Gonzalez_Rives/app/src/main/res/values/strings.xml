@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">P10FicherosTexto_Javier_Gonzalez_Rives</string>
+    <string name="btGuardar">guardar</string>
+    <string name="btCargar">cargar</string>
 </resources>
