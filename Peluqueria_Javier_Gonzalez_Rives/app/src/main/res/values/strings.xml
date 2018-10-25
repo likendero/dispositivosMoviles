@@ -16,5 +16,6 @@
     <string name="edTelefono">introduce un telefono</string>
     <!-- cuadro de comentarios -->
     <string name="edComentarios">pon aqui tus comentarios</string>
+    <string name="edMostrarDias">Dia: lunes</string>
 
 </resources>

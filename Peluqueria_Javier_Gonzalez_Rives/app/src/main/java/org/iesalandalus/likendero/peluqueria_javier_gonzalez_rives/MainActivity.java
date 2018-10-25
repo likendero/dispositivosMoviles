@@ -24,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
      * metodo que realiza el cambio en tre las activitys
      * @param nombre nombre del usuario a ver
      */
-    private void cambioActivity(String nombre){
+    private void cambioActivity(String nombre,boolean existe){
         // creacion del intent para el cambio
         Intent cambio = new Intent(this,AcDatos.class);
         // traspaso de la cadena entre activitys
         cambio.putExtra("nombre",nombre);
+        // traspaso si el usuario es nuevo
+        cambio.putExtra("existe",existe);
         // cambio de activity
         startActivity(cambio);
     }
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             // comprobacion de la contrasenna
             if(guardado.getString(nombre,"").equals(contrasenna)){
                 // si existe se cambia de activity von el nombre del usuario
-                cambioActivity(nombre);
+                cambioActivity(nombre,true);
 
             }else // caso de contrasenna incorrecta
                 Toast.makeText(this, "contrasenna incorrecta", Toast.LENGTH_SHORT).show();
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 // commit
                 editor.commit();
                 // cambio de acticity
-                cambioActivity(nombre);
+                cambioActivity(nombre,false);
             }else
                 Toast.makeText(this, "el usuario ya existe", Toast.LENGTH_SHORT).show();
         }else

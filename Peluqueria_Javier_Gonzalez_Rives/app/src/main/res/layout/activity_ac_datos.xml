@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:checkedButton="@+id/rdMoreno"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -20,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="radioOnClick"
             android:text="@string/pelo1" />
 
         <RadioButton
@@ -27,14 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/pelo2"
-            />
+            android:onClick="radioOnClick"
+            android:text="@string/pelo2" />
 
         <RadioButton
             android:id="@+id/rdPelirojo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="radioOnClick"
             android:text="@string/pelo3" />
 
         <RadioButton
@@ -42,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="radioOnClick"
             android:text="@string/pelo4" />
 
         <RadioButton
@@ -49,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="radioOnClick"
             android:text="@string/pelo5" />
     </RadioGroup>
 
@@ -71,13 +76,13 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:text="@string/tvTelefono"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/edTelefono"
         app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvDias" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edTelefono"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
@@ -89,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@id/lvDias" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edComentarios"
         android:layout_width="wrap_content"
         android:layout_height="128dp"
         android:layout_marginStart="8dp"
@@ -101,25 +106,39 @@
         android:hint="@string/edComentarios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/edTelefono" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="volverOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/volver" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="guardarOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@mipmap/guardar" />
+
+    <TextView
+        android:id="@+id/edMostrarDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/edMostrarDias"
+        app:layout_constraintEnd_toStartOf="@+id/lvDias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 </android.support.constraint.ConstraintLayout>
