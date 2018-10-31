@@ -61,6 +61,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/btBuscar"
+        android:onClick="mostrarOnClick"
         app:layout_constraintStart_toEndOf="@+id/btRegistrar"
         app:layout_constraintTop_toBottomOf="@+id/edPrecio" />
 
@@ -71,6 +72,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/btModificar"
+        android:onClick="ModificarClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btRegistrar" />
 
@@ -81,6 +83,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/btBorrar"
+        android:onClick="eliminarOnClick"
         app:layout_constraintStart_toEndOf="@+id/btmodificar"
         app:layout_constraintTop_toBottomOf="@+id/btBuscar" />
 
