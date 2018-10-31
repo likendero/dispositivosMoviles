@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">P11SQlite_Javier_Gonzalez_Rives</string>
+    <!-- intro del texto -->
+    <string name="edId">introduce el codigo del producto</string>
+    <string name="edDescripcion">descripcion del producto</string>
+    <string name="edPrecio">precio</string>
+    <!-- botones -->
+    <string name="btRegistrar">REGISTRAR</string>
+    <string name="btBuscar">BUSCAR</string>
+    <string name="btModificar">modificar</string>
+    <string name="btBorrar">borrar</string>
+</resources>
