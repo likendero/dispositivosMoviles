@@ -4,9 +4,13 @@
     <string name="edId">introduce el codigo del producto</string>
     <string name="edDescripcion">descripcion del producto</string>
     <string name="edPrecio">precio</string>
+    <string name="edColor">color</string>
     <!-- botones -->
     <string name="btRegistrar">REGISTRAR</string>
     <string name="btBuscar">BUSCAR</string>
     <string name="btModificar">modificar</string>
     <string name="btBorrar">borrar</string>
+    <string name="btListar">listar registros</string>
+    <!-- actividad listado -->
+    <string name="btVolver">volver</string>
 </resources>

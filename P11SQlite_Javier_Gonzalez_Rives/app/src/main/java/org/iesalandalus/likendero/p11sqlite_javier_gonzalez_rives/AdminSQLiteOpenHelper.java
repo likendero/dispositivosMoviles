@@ -32,6 +32,10 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase database, int i, int i1) {
-
+        if(i==1 && i1>=2)
+            database.execSQL(
+                    "alter table articulos " +
+                            "add column color text"
+            );
     }
 }

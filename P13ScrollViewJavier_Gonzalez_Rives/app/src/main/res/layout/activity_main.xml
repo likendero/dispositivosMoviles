@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollFrutas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearFrutas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/ibCereza"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_green_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/cereza" />
+
+            <ImageButton
+                android:id="@+id/ibFresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/fresa" />
+
+            <ImageButton
+                android:id="@+id/ibKiwi"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:background="@android:color/holo_green_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/kiwi" />
+
+            <ImageButton
+                android:id="@+id/ibPera"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:background="@android:color/background_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/pera" />
+
+            <ImageButton
+                android:id="@+id/ibpinna"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:background="@android:color/holo_green_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/pina" />
+
+           <!-- <ImageButton
+                android:id="@+id/ibPlatano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/platano" /> -->
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <ImageButton
+                android:id="@+id/ibRemolacha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/remolacha" />
+
+            <ImageButton
+                android:id="@+id/ibTomate"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:background="@android:color/background_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/tomate" />
+
+            <ImageButton
+                android:id="@+id/ibUva"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:background="@android:color/holo_green_light"
+                android:onClick="seleccionFruta"
+                app:srcCompat="@mipmap/uvas" />
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

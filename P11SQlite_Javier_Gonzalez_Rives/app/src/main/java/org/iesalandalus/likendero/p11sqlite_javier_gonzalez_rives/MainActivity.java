@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText edId, edDesc,edPrecio;
+    private EditText edId, edDesc, edPrecio, edColor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         edId = (EditText) findViewById(R.id.edId);
         edDesc = (EditText) findViewById(R.id.edDesc);
         edPrecio = (EditText) findViewById(R.id.edPrecio);
-
+        edColor = (EditText) findViewById(R.id.edColor);
     }
 
     /**
@@ -30,14 +30,16 @@ public class MainActivity extends AppCompatActivity {
      */
     public void RegistrarClick(View view){
         // crear la clase para poder administrar SQLite
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,2);
         SQLiteDatabase dataBase = admin.getWritableDatabase();
         // guardado de los valores
         String id = edId.getText().toString().trim();
         String desc = edDesc.getText().toString().trim();
         String precio = edPrecio.getText().toString().trim();
+        String color = edColor.getText().toString().trim();
         int idi;
-        if(id.length() <= 0 || desc.length() <= 0 || precio.length() <= 0) {
+        // control de los campos
+        if(id.length() <= 0 || desc.length() <= 0 || precio.length() <= 0 || color.length() <= 0) {
             Toast.makeText(this, "alguno de los campos no es correcto", Toast.LENGTH_SHORT).show();
 
         }else{
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             registro.put("codigo",idi);
             registro.put("descripcion", desc);
             registro.put("precio",precio);
+            registro.put ("color",color);
             // una vez cogidos todos los valores hace un insert
             dataBase.insert("articulos",null,registro);
             Toast.makeText(this, "guardado", Toast.LENGTH_SHORT).show();
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         edId.setText("");
         edDesc.setText("");
         edPrecio.setText("");
+        edColor.setText("");
         //dataBase.insert("articulos",null,);
     }
     /**
@@ -66,12 +70,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void ModificarClick(View view){
         // crear la clase para poder administrar SQLite
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,2);
         SQLiteDatabase dataBase = admin.getWritableDatabase();
         // guardado de los valores
         String id = edId.getText().toString().trim();
         String desc = edDesc.getText().toString().trim();
         String precio = edPrecio.getText().toString().trim();
+        String color = edColor.getText().toString().trim();
         int idi;
         if(id.length() <= 0 || desc.length() <= 0 || precio.length() <= 0) {
             Toast.makeText(this, "alguno de los campos no es correcto", Toast.LENGTH_SHORT).show();
@@ -85,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             //registro.put("codigo",idi);
             registro.put("descripcion", desc);
             registro.put("precio",precio);
+            registro.put("color",color);
             // una vez cogidos todos los valores hace un insert
             int numeroTuplas = dataBase.update("articulos",registro,"codigo = " + id,null);
             if(numeroTuplas == 1)
@@ -98,10 +104,11 @@ public class MainActivity extends AppCompatActivity {
         edId.setText("");
         edDesc.setText("");
         edPrecio.setText("");
+        edColor.setText("");
         //dataBase.insert("articulos",null,);
     }
     public void mostrarOnClick(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,2);
         SQLiteDatabase dataBase = admin.getWritableDatabase();
         // caputura del valor
         String id = edId.getText().toString();
@@ -111,10 +118,11 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
 
-            Cursor fila = dataBase.rawQuery("select descripcion,precio from articulos where codigo = " + id,null);
+            Cursor fila = dataBase.rawQuery("select descripcion,precio,color from articulos where codigo = " + id,null);
             if (fila.moveToFirst()) {
                 edDesc.setText(fila.getString(0));
                 edPrecio.setText(fila.getString(1));
+                edColor.setText(fila.getString(2));
             }else{
                 Toast.makeText(this, "no existe el articulo", Toast.LENGTH_SHORT).show();
             }
@@ -124,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void eliminarOnClick(View view){
         // crear la clase para poder administrar SQLite
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,2);
         SQLiteDatabase dataBase = admin.getWritableDatabase();
 
         String codigo = edId.getText().toString();
@@ -141,5 +149,15 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    /**
+     * cambio a la segunda activity para listar
+     */
+    public void listaOnClock(View view){
+        // creacion del intent
+        Intent intent = new Intent(this,listado.class);
+        // cambio de actividad
+        startActivity(intent);
     }
 }

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">P11bSQLLITE_Javier_Gonzalez_Rives</string>
+    <string name="edId">id</string>
+    <string name="edVariable">variable</string>
+    <string name="edKilos">kilos</string>
+    <string name="edComentarios">comentarios</string>
+</resources>

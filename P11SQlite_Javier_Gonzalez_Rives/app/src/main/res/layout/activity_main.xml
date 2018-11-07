@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <!-- texto editable -->
     <EditText
         android:id="@+id/edDesc"
         android:layout_width="344dp"
@@ -43,16 +43,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edDesc" />
 
+    <EditText
+        android:id="@+id/edColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="@string/edColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edPrecio" />
+    <!-- botones -->
     <Button
         android:id="@+id/btRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/btRegistrar"
         android:onClick="RegistrarClick"
+        android:text="@string/btRegistrar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edPrecio" />
+        app:layout_constraintTop_toBottomOf="@+id/edColor" />
 
     <Button
         android:id="@+id/btBuscar"
@@ -60,10 +72,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/btBuscar"
         android:onClick="mostrarOnClick"
+        android:text="@string/btBuscar"
         app:layout_constraintStart_toEndOf="@+id/btRegistrar"
-        app:layout_constraintTop_toBottomOf="@+id/edPrecio" />
+        app:layout_constraintTop_toBottomOf="@+id/edColor" />
 
     <Button
         android:id="@+id/btmodificar"
@@ -87,13 +99,16 @@
         app:layout_constraintStart_toEndOf="@+id/btmodificar"
         app:layout_constraintTop_toBottomOf="@+id/btBuscar" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="366dp"
-        android:layout_height="230dp"
+    <Button
+        android:id="@+id/btListar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:text="lsitar"
+        android:onClick="listaOnClock"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btBorrar"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[9]" />
+        app:layout_constraintTop_toBottomOf="@+id/btmodificar" />
+
+
 </android.support.constraint.ConstraintLayout>
