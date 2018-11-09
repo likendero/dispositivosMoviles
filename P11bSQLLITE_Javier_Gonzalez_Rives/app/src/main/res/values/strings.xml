@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">P11bSQLLITE_Javier_Gonzalez_Rives</string>
+    <!-- recuadros de texto -->
     <string name="edId">id</string>
     <string name="edVariable">variable</string>
     <string name="edKilos">kilos</string>
     <string name="edComentarios">comentarios</string>
+    <!-- boton  -->
+    <string name="btregistrar">registrar</string>
+    <string name="btbuscar">buscar</string>
+    <string name="btactualizar">actualizar</string>
+    <string name="btborrar">borrar</string>
 </resources>

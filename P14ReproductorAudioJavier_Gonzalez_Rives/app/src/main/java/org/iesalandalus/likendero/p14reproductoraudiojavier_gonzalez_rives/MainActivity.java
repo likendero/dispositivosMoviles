@@ -1,6 +1,7 @@
 package org.iesalandalus.likendero.p14reproductoraudiojavier_gonzalez_rives;
 
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,5 +39,19 @@ public class MainActivity extends AppCompatActivity {
     public void AudioPoolonClick(View view){
         sp.play(sonidoRep,1,1,1,0,0);
 
+    }
+
+    /**
+     * crear un objeto media player
+     * (contexto,sonido R.raw,evento start)
+     */
+    public void mediaOnclick(View view){
+        MediaPlayer mp = MediaPlayer.create(this,R.raw.sonidolargo);
+
+        if(!mp.isPlaying()){
+            mp.start();
+        }else{
+            mp.stop();
+        }
     }
 }

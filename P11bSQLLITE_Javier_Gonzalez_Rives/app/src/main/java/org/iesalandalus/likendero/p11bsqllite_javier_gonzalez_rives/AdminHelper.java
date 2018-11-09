@@ -17,7 +17,7 @@ public class AdminHelper extends SQLiteOpenHelper {
                 "create table if not exists patatas(" +
                         "id int primary key," +
                         "variedad text," +
-                        "kilos int," +
+                        "kilos real," +
                         "comentarios text" +
                         ")"
         );

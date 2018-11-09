@@ -29,5 +29,6 @@
         android:text="@string/btMedia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSoundPool" />
+        app:layout_constraintTop_toBottomOf="@+id/btSoundPool"
+        android:onClick="mediaOnclick"/>
 </android.support.constraint.ConstraintLayout>
