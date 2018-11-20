@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void stop(View view){
         canciones[posicion].pause();
+        canciones[posicion].seekTo(0);
         ibPlay.setBackgroundResource(R.drawable.reproducir);
         posicion = 0;
     }
@@ -136,6 +137,25 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
+    }
+
+    /**
+     *
+     */
+    public void repetir(View view){
+        if(repetir == 1){ // no repetir
+            ibRepete.setBackgroundResource(R.drawable.no_repetir);
+            canciones[posicion].setLooping(false);
+            repetir = 2;
+            Toast.makeText(this, "No repetir", Toast.LENGTH_SHORT).show();
+        }else{
+            ibRepete.setBackgroundResource(R.drawable.repetir);
+            canciones[posicion].setLooping(true);
+            repetir = 1;
+            Toast.makeText(this, "se repite cual ajo", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
 }

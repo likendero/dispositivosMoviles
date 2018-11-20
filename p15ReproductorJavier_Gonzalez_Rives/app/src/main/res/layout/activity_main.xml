@@ -51,7 +51,8 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/no_repetir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imPortada" />
+        app:layout_constraintTop_toBottomOf="@+id/imPortada"
+        android:onClick="repetir"/>
 
     <ImageButton
         android:id="@+id/ibAnterior"
@@ -73,5 +74,6 @@
         android:background="@drawable/siguiente"
         android:onClick="siguiente"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ibRepete" />
+        app:layout_constraintTop_toBottomOf="@+id/ibRepete"
+        />
 </android.support.constraint.ConstraintLayout>

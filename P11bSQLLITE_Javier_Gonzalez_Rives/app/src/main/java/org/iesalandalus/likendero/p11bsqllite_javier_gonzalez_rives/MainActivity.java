@@ -66,8 +66,19 @@ public class MainActivity extends AppCompatActivity {
 
             // introduccion del registro
             data.insert("patatas",null,cont);
+            Toast.makeText(this, "registro guardado", Toast.LENGTH_SHORT).show();
+            // vaciado de los campos
+            edId.setText("");
+            edVariedad.setText("");
+            edComentarios.setText("");
+            edKilos.setText("");
+        }
+        // caso que halla algun campo sin rellenar
+        else{
+            Toast.makeText(this, "Faltan campos por rellenar", Toast.LENGTH_SHORT).show();
         }
         data.close();
+
     }
 
     /**
@@ -90,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
         if(!id.isEmpty()){
             Cursor cur = data.rawQuery("select variedad,kilos,comentarios from patatas where id=" +id,null );
             if(cur.moveToFirst()){
-                variedad =  cur.getString(1);
-                kilos = cur.getString(2);
-                comentarios = cur.getString(3);
+                variedad =  cur.getString(0);
+                kilos = cur.getString(1);
+                comentarios = cur.getString(2);
             }else{
                 Toast.makeText(this, "no hay ningun registro con ese id", Toast.LENGTH_SHORT).show();
             }
@@ -118,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         // comprobacion del campo id
         if(!id.isEmpty()){
             // borrado
-            if(data.delete("patatas","where id=" + id,null) > 0){
+            if(data.delete("patatas","id=" + id,null) > 0){
                 // si el id existia
                 Toast.makeText(this, "borrado satisfactorio", Toast.LENGTH_SHORT).show();
             }else{
@@ -140,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase data = admin.getWritableDatabase();
         // captura de los valores
         String id = edId.getText().toString();
-        String variedad = edId.getText().toString();
+        String variedad = edVariedad.getText().toString();
         String kilos = edKilos.getText().toString();
         String comentarios = edComentarios.getText().toString();
 
@@ -151,6 +162,29 @@ public class MainActivity extends AppCompatActivity {
                 !comentarios.isEmpty()
                 ){
 
+                // consulta para ver si existe el campo
+                Cursor cur = data.rawQuery("select * from patatas where id="+id,null);
+                // en el caso que sea falso no existe el campo
+                if(cur.moveToFirst()){
+                    ContentValues cont = new ContentValues();
+                    // introduccion de valores
+                    cont.put("id",id);
+                    cont.put("variedad",variedad);
+                    cont.put("kilos",kilos);
+                    cont.put("comentarios",comentarios);
+
+                    // actualizacion de los valores
+                    data.update("patatas",cont,"id = "+id,null);
+                    Toast.makeText(this, "actualizacion realizada", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(this, "No existe ningun campo con ese id", Toast.LENGTH_SHORT).show();
+                }
+
+
+        }else{
+            Toast.makeText(this, "Faltan campos por rellenar", Toast.LENGTH_SHORT).show();
         }
+        data.close();
     }
+
 }
