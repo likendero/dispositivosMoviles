@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listCanciones;
     private MediaPlayer mediaPlayer;
     private MediaRecorder mediaRecorder;
-    private File direcctorio;
+    private String direcctorio;
     private String[] canciones = {"pista1","pista2","pista3","grabacion"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void dirGuardad(){
         try{
-            direcctorio =new File(getFilesDir(),"grabacion.mp3");
+            direcctorio =Environment.getExternalStorageDirectory()+"/grabacion.mp3";
         }catch(Exception ex){
             System.out.println("excepcion");
         }
@@ -122,10 +123,16 @@ public class MainActivity extends AppCompatActivity {
                     mediaPlayer = MediaPlayer.create(this, i);
                     mediaPlayer.start();
                 } else {
-                    if(direcctorio.exists()) {
+                    if(new File(direcctorio).canRead()) {
                         // caso que sea la grabacion en el telefono
+                        Toast.makeText(this, "rep " + direcctorio, Toast.LENGTH_SHORT).show();
                         mediaPlayer = new MediaPlayer();
-                        mediaPlayer.setDataSource(direcctorio.getAbsolutePath());
+                        mediaPlayer.setDataSource(direcctorio);
+                        mediaPlayer.prepare();
+                        mediaPlayer.start();
+
+                    }else{
+                        Toast.makeText(this, "el no se puede leer", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -158,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
             mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 
             // seteo de la salida
-            mediaRecorder.setOutputFile(direcctorio.getAbsolutePath());
+            mediaRecorder.setOutputFile(direcctorio);
 
             try{
                 // preparacion para la grabacion
