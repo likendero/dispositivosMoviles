@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         // creacion de los sensores
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        int x = (int) sensorEvent.values[0];
-        int y =(int) sensorEvent.values[1];
-        int z =(int) sensorEvent.values[2];
+        double x = sensorEvent.values[0];
+        double y = sensorEvent.values[1];
+        double z = sensorEvent.values[2];
         // paso a los cuadros de texto
         txx.setText("x: " + x);
         txy.setText("y: " + y);
