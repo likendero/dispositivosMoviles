@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">JuegoAcelerometro</string>
+    <!-- pantalla principal -->
+    <string name="btplay">Jugar</string>
+    <!-- pantalla de juego -->
+    <string name="tvAgitar">Dale un buen meneo sin miedo!!!!!</string>
+    <string name="resFlojo">muy flojo dale mas fuerte SIN MIEDO!!!!</string>
+    <!-- pantalla de puntuacion -->
+    <string name="tvPuntuacion">tu puntuacion es:</string>
+    <string name="tvNombrePuntuacion">introduzca su nombre: </string>
+    <string name="btGuardar">Guardar</string>
+    <string name="btCancelar">Cancelar</string>
+</resources>
