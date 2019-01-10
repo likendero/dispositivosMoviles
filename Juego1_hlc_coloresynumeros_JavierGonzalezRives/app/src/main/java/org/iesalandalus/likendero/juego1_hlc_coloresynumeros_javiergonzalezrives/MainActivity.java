@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String VIBRAR = "vibrar";
     public static final String SONAR = "sonar";
     public static final String NUMEROS = "numeros";
-    public static final String NUMCLICKS = "clicks"
+    public static final String NUMCLICKS = "clicks";
     public static final int REQUEST_CODE = -1;
 
     private SeekBar sbFilas, sbColumnas, sbElementos;
