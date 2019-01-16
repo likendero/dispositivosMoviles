@@ -151,9 +151,9 @@ public class MainActivity extends AppCompatActivity {
         // Bundle
         Bundle datos = new Bundle();
         int filas,colummas,elementos, vibrar, sonar, numeros;
-        filas = sbFilas.getProgress();
-        colummas = sbColumnas.getProgress();
-        elementos = sbElementos.getProgress();
+        filas = sbFilas.getProgress() + 3;
+        colummas = sbColumnas.getProgress() + 3;
+        elementos = sbElementos.getProgress() + 2;
         sonar = ckSonar.isChecked() ? 1 : 0;
         vibrar = ckVibrar.isChecked() ? 1 : 0;
         numeros = rbNumeros.isChecked() ? 1 : 0;
