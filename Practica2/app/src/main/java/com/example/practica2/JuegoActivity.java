@@ -57,7 +57,7 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
     public void mostrarDialogo(){
         DialogoNombreNivel miDialogoNombreNivel = DialogoNombreNivel.newInstance();
         miDialogoNombreNivel.setCancelable(false);
-        miDialogoNombreNivel.show(getSupportFragmentManager(),"DialogoNombreNivel");
+        miDialogoNombreNivel.show(getFragmentManager(),"DialogoNombreNivel");
     }
 
     public void setView(){
@@ -94,7 +94,7 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
     }
     public static ArrayList<Integer> desordenarBotones(){
         ArrayList<Integer> array = new ArrayList<>();
-        for(int i = 0; i < 5 ; i++){
+        for(int i = 1; i < 5 ; i++){
             array.add(i);
         }
         Collections.shuffle(array);
@@ -197,4 +197,24 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
             }
         }
         }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(controlTask != null){
+            controlTask.cancel(true);
+            estado = new Bundle();
+            estado.putInt(KEY_VELOCIDAD,velocidad);
+            estado.putInt(KEY_PROGRESO, progreso);
+        }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(estado != null && !partidaAcabada){
+            controlTask = new ControlTask();
+            controlTask.execute(estado.getInt(KEY_VELOCIDAD,estado.getInt(KEY_PROGRESO)));
+        }
+    }
+}
