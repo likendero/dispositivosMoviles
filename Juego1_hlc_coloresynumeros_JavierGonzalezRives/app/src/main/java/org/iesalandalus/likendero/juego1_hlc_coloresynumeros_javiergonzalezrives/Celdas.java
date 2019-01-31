@@ -27,6 +27,7 @@ public class Celdas extends android.support.v7.widget.AppCompatButton {
         this.fondo = f;
         this.fila = fil;
         this.columna = col;
+        this.setBackgroundResource(fondo);
     }
     // METODOS /////////////////////////////////////////////////////////////////
     public int getNuevoFondo(){
@@ -34,7 +35,7 @@ public class Celdas extends android.support.v7.widget.AppCompatButton {
         // si llega al  maximo de elementos se iguala a 1 ?¿?
         //                                               |_̣___|
         if(contenidoCelda == numeroElementos){
-            contenidoCelda = 1;
+            contenidoCelda = 0;
         }
         return contenidoCelda;
     }

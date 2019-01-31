@@ -26,7 +26,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationListener listener;
     // tiempo minimo de actualizacion
     private final long MIN_TIME = 0;
-    private final long MIN_DIST = 5;
+    private final long MIN_DIST = 0;
     // variable que transforma latitud y longitud
     private LatLng latLng;
 
@@ -39,29 +39,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        if(
-                ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                ||
-                ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+        if (
+                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                        ||
+                        ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
 
-                ){
+                ) {
             String[] permisos = {
                     Manifest.permission.ACCESS_COARSE_LOCATION,
                     Manifest.permission.ACCESS_FINE_LOCATION
             };
-            ActivityCompat.requestPermissions(this,permisos,1);
+            ActivityCompat.requestPermissions(this, permisos, 1);
         }
     }
 
     /**
      * metodo que realiza la localizacion
      */
-    public void localizacionGPS(){
+    public void localizacionGPS() {
         manager = (LocationManager) getSystemService(Service.LOCATION_SERVICE);
         listener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-
+                latLng = new LatLng(location.getLatitude(),location.getLongitude());
+                // en el caso que se nos localice, limpiamos todos los puntos del mapa clear()
+                if(latLng != null){
+                    mMap.clear();
+                }
+                mMap.addMarker(new MarkerOptions().position(latLng).title("Mi posocion"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             }
 
             @Override
@@ -79,6 +85,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         };
+        // se añade un try catch para eliminar el problema con los seguros
+        try {
+            manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DIST, listener);
+        }catch(SecurityException se){
+
+        }
     }
 
     /**
@@ -95,8 +107,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //if(latLng == null) {
+
+
+            LatLng sydney = new LatLng(-34, 151);
+            mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //}
+        localizacionGPS();
     }
 }

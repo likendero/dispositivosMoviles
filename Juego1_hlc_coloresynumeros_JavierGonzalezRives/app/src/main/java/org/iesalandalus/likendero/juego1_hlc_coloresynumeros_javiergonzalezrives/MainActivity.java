@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static final String FILAS = "nFilas";
@@ -166,16 +167,17 @@ public class MainActivity extends AppCompatActivity {
         datos.putInt(NUMEROS,numeros);
 
         intent.putExtras(datos);
-        startActivity(intent);
+        startActivityForResult(intent,REQUEST_CODE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-
+            int totalClicks = data.getIntExtra(NUMCLICKS,0);
+            Toast.makeText(this, "GANASTE PINCHE PUSACIONES: " + totalClicks, Toast.LENGTH_SHORT).show();
         }
-        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-
+        if(requestCode == REQUEST_CODE && resultCode == RESULT_CANCELED){
+            Toast.makeText(this, "EL JUEGO SE CANCELO", Toast.LENGTH_SHORT).show();
         }
         super.onActivityResult(requestCode,resultCode,data);
     }

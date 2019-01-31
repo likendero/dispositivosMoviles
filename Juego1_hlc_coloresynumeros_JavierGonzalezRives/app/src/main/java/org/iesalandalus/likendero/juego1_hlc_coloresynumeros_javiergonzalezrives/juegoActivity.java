@@ -1,6 +1,7 @@
 package org.iesalandalus.likendero.juego1_hlc_coloresynumeros_javiergonzalezrives;
 
 import android.app.Service;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -62,7 +63,8 @@ public class juegoActivity extends AppCompatActivity {
         // CREAR MATRIZ
         miMatriz = new MatrizJuego(filas,columnas,numeroElementos);
         miMatriz.rellenarMatriz();
-        idCeldas = miMatriz.getMatriz();
+        idCeldas = new int[filas][columnas];
+        //idCeldas = miMatriz.();
         // numoeros o colores
 
         if(esnumero == 1){
@@ -70,6 +72,7 @@ public class juegoActivity extends AppCompatActivity {
         }else{
             tablero = colores;
         }
+        valoresCeladas = miMatriz.getMatriz();
         // ponemos la pantalla
         // Grosor de las filas automatico segun el numero que halla
         // quitamos 180 por arriba para los marcadores :·3
@@ -111,6 +114,7 @@ public class juegoActivity extends AppCompatActivity {
                 // creo cada uno de los botones le paso el listener de id
                 Celdas celda = new Celdas(this,++indiceBoton,numeroElementos,valor,tablero[valor],i,j);
                 celda.setId(indiceBoton);
+                idCeldas[i][j] = indiceBoton;
                 celda.setLayoutParams(new LinearLayout.LayoutParams(0,altura,1.0f));
                 // Listener a los botones
                 celda.setOnClickListener(new View.OnClickListener() {
@@ -127,7 +131,57 @@ public class juegoActivity extends AppCompatActivity {
     }
     // --------------------------------------
     public void pulsarCelda(int a, int b){
+        crono1.start();
+        if(sonar == 1){
+            mp.start();
+        }
+        if(vibrar == 1){
+            viService.vibrate(80);
+        }
+        numClicks++;
+        tvClicks.setText(""+numClicks);
+        // cambio de filas
+        for(int i = maximo(0,-1); i <= minimo(-1,filas+1);i++){
+            cambiar(i,columnas-1);
+        }
+        for(int j = maximo(0,columnas-1); j <= minimo(columnas+1,columnas-1); j++){
+            if(j == columnas){
+                continue;
+            }else{
+                cambiar(filas-1,j);
+            }
+        }
+        checkGanar();
+    }
 
+    private void checkGanar() {
+        int target = valoresCeladas[0][0];
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                if (valoresCeladas[i][j] != target) {
+                    return;
+                }
+            }
+        }
+        // FIN DEL JUEGO
+        Intent i = new Intent();
+        i.putExtra(MainActivity.NUMCLICKS, numClicks);
+        setResult(RESULT_OK,i);
+        finish();
+    }
+
+    // METODOS LOGICA JUEGO ////////////////////////////////////////////////////////////////////
+    public void cambiar(int f, int c){
+        // captura el id de la celda que quiero cambiaar
+        int idCelda = idCeldas[f][c];
+        // recupera la celda
+        Celdas celda = (Celdas) findViewById(idCelda);
+        // capturo el nuevo fondo de la celda
+        int nuevoValor = celda.getNuevoFondo();
+        // actualiza el valor en el array de valores
+        celda.setBackgroundResource(tablero[nuevoValor]);
+        // pintar sin problemas
+        celda.invalidate();
     }
     public int maximo(int a, int b){
         if( a > b ){
