@@ -3,11 +3,14 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="/media/likendero/69f9b023-9c8e-4768-87da-75f95ff9fa71/home/likendero/github/dispositivosMoviles/PracticaJuegoandroid1" />
+            <option value="/media/likendero/69f9b023-9c8e-4768-87da-75f95ff9fa71/home/likendero/github/dispositivosMoviles/PracticaJuegoandroid1/app" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

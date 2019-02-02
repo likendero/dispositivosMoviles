@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "21167740794",
+    "firebase_url": "https://proyectojaviergonzalez-fce9b.firebaseio.com",
+    "project_id": "proyectojaviergonzalez-fce9b",
+    "storage_bucket": "proyectojaviergonzalez-fce9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21167740794:android:402ea9c0cf2b9a96",
+        "android_client_info": {
+          "package_name": "javiergonzalezrives.iesalandalus.p32firebase_prueba_javiergonzalezrives"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21167740794-k5b6vnpe2i7uo7e3ctj3t4t6t0of68r9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "javiergonzalezrives.iesalandalus.p32firebase_prueba_javiergonzalezrives",
+            "certificate_hash": "44dcacb5ea6cd9d4ec5c19fc6922c92d3654f732"
+          }
+        },
+        {
+          "client_id": "21167740794-o1ou9lbgmr264q8v486cmsk7ohc1cacn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4CBjftmEhzQNmlx3zl-innGe-XHMSH38"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21167740794-o1ou9lbgmr264q8v486cmsk7ohc1cacn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

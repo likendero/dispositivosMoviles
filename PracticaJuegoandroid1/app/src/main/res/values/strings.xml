@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ejercicio</string>
+    <string name="tvSelec">selecciona un nivel para jugar</string>
 </resources>
