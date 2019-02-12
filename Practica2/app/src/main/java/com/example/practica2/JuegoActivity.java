@@ -99,6 +99,7 @@ public class JuegoActivity extends BaseActivity implements DialogoNombreNivel.On
         }
         Collections.shuffle(array);
         return array;
+        return array;
 
     }
     @Override
