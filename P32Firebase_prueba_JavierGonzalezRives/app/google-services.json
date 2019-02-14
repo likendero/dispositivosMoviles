@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "21167740794-2lskur9kp74g3rlh14tirmg48lud74ad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "javiergonzalezrives.iesalandalus.p32firebase_prueba_javiergonzalezrives",
+            "certificate_hash": "b32ade6b1f11318cb42548acd275b8283ebb87bc"
+          }
+        },
+        {
           "client_id": "21167740794-o1ou9lbgmr264q8v486cmsk7ohc1cacn.apps.googleusercontent.com",
           "client_type": 3
         }

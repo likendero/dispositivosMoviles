@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,12 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity  {
     private EditText etNombre,etDni,etPrimerApellido,etSegundoApellido ,etEdad;
     private FirebaseDatabase data = FirebaseDatabase.getInstance();
+    private FirebaseAuth auth;
     private DatabaseReference myRef = data.getReference("Agenda");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        auth = FirebaseAuth.getInstance();
 
         // capturar componentes
         etNombre = (EditText) findViewById(R.id.etNombre);
@@ -32,6 +36,13 @@ public class MainActivity extends AppCompatActivity  {
         etEdad = (EditText) findViewById(R.id.etEdad);
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        // caso de on stop
+        auth.addAuthStateListener();
+    }
     /**
      * guardar los registros
      */
@@ -62,7 +73,7 @@ public class MainActivity extends AppCompatActivity  {
     protected void onStart(){
         super.onStart();
         // optener referencia del campo edad
-        DatabaseReference edad = myRef.child("54").child("edad");
+        //DatabaseReference edad = myRef.child("54").child("edad");
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -71,8 +82,9 @@ public class MainActivity extends AppCompatActivity  {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
+                Toast.makeText(MainActivity.this, "Se ha relaizado un cambio " + s, Toast.LENGTH_SHORT).show();
             }
+
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
@@ -90,18 +102,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-        edad.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String valorEdad = dataSnapshot.getValue(String.class);
-                etEdad.setText(valorEdad);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
 }
