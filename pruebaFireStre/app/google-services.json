@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "891066813983",
+    "firebase_url": "https://pruebafirestre.firebaseio.com",
+    "project_id": "pruebafirestre",
+    "storage_bucket": "pruebafirestre.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891066813983:android:fc6db50979372fb0",
+        "android_client_info": {
+          "package_name": "org.likendero.pruebafirestre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891066813983-9vaenqd1o1du52g3rg6bnqej8dprrl68.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.likendero.pruebafirestre",
+            "certificate_hash": "b32ade6b1f11318cb42548acd275b8283ebb87bc"
+          }
+        },
+        {
+          "client_id": "891066813983-bdljho4rersbou2h3sq2h3jpfdgm1a1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDloCpaAhtEHzm6aOwAtTQMi0jTmt6UfQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891066813983-bdljho4rersbou2h3sq2h3jpfdgm1a1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

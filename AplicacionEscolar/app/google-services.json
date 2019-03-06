@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "34551604373",
+    "firebase_url": "https://aplicacionescolar-14ee1.firebaseio.com",
+    "project_id": "aplicacionescolar-14ee1",
+    "storage_bucket": "aplicacionescolar-14ee1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34551604373:android:381209dcc4baddec",
+        "android_client_info": {
+          "package_name": "org.likendero.aplicacionescolar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34551604373-f65l7l9je37d7sqrk7432epc0keaj5n5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.likendero.aplicacionescolar",
+            "certificate_hash": "b32ade6b1f11318cb42548acd275b8283ebb87bc"
+          }
+        },
+        {
+          "client_id": "34551604373-9qi1nhs16et069m1t84b9g3aei0nvh3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy_JYTkPKVJg7Wm39gI7O0EMY55XDT3XI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34551604373-9qi1nhs16et069m1t84b9g3aei0nvh3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

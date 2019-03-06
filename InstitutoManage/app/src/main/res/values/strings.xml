@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">InstitutoManage</string>
+    <!-- login -->
+    <string name="logName">Nombre</string>
+    <string name="logPass">Contrasenna</string>
+    <string name="btLog">Entrar</string>
+    <string name="btSing">Registrarse</string>
+    <!-- sing in -->
+    <string name="singRe">Repite la contrenna</string>
+    <string name="singTitle">Registrarse</string>
+    <string name="singBtTitle">Registrar</string>
+    <string name="singCancel">Cancelar</string>
+</resources>
